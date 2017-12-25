@@ -34,8 +34,8 @@ void CalculateNewtonGravityAcceleration(body *a, body *b, float *ax, float *ay) 
                 *ay = (galacticPlaneRofY * scale);
 }
 void integrate(body *planet, float deltaTime) {
-        planet->x += planet->ax * DT * DT / 2.0 + planet->vx * DT;
-        planet->y += planet->ay * DT * DT / 2.0 + planet->vy * DT;
+        planet->x += planet->vx * DT;
+        planet->y += planet->vy * DT;
         planet->vx += planet->ax * DT;
         planet->vy += planet->ay * DT;
 }
